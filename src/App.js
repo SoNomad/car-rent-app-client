@@ -3,8 +3,9 @@ import ContactsBar from './components/ContactsBar/ContactsBar';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import ManagerChat from './components/ManagerChat/ManagerChat';
-import Navbar from './components/Navbar/Navbar';
+import AboutUs from './pages/AboutUs/AboutUs';
 import Blog from './pages/Blog/Blog';
+import Conditions from './pages/Conditions/Conditions';
 import Contacts from './pages/Contacts/Contacts';
 import Home from './pages/Home/Home';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
@@ -14,12 +15,13 @@ function App() {
     <div className="App">
       <Header />
       <ContactsBar />
-      <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="*" element={<NotFoundPage />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/conditions" element={<Conditions />} />
       </Routes>
       <ManagerChat />
       <Footer />

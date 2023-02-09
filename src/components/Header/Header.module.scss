@@ -1,0 +1,21 @@
+.wrapper {
+  position: absolute;
+  padding-top: 25px;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+.navbar {
+  display: flex;
+  width: 35%;
+  justify-content: space-between;
+}

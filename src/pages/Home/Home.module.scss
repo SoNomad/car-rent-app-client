@@ -1,0 +1,15 @@
+.header {
+  background-image: url('./image\ 3@2x.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 770px;
+  width: 100%;
+  position: absolute;
+  .logoName {
+    display: flex;
+    justify-content: center;
+    :first-child {
+      border-right: 1px solid white;
+    }
+  }
+}
