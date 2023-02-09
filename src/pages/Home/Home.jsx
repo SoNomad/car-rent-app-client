@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './Home.module.scss';
-import gradient from './gradient.png';
 import { Typography } from '@mui/material';
 
 const Home = () => {
