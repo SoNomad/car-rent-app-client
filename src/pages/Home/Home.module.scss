@@ -4,7 +4,6 @@
   background-size: cover;
   min-height: 770px;
   width: 100%;
-  position: absolute;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -20,4 +19,8 @@
   .switcher {
     width: 90%;
   }
+}
+main {
+  display: flex;
+  justify-content: center;
 }
