@@ -5,7 +5,7 @@ import car2 from './car2.png';
 import flot from './flot.png';
 
 const CarSwitcher = () => {
-  const [active, setActive] = useState('');
+  const [active, setActive] = useState('car');
 
   const classHandler = (item) => {
     setActive((prev) => (prev = item));
