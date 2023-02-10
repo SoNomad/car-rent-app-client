@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Home.module.scss';
 import { Typography } from '@mui/material';
+import CarSwitcher from '../../components/CarSwitcher/CarSwitcher';
 
 const Home = () => {
   return (
@@ -13,6 +14,9 @@ const Home = () => {
           <Typography variant="h3" sx={{ color: 'white', fontWeight: 100 }}>
             Аренда <br /> транспорта
           </Typography>
+        </div>
+        <div className={styles.switcher}>
+          <CarSwitcher />
         </div>
       </div>
     </>
