@@ -1,5 +1,7 @@
+import React from 'react'
+import styles from './ManagerChat.module.scss'
 const ManagerChat = () => {
-  return <div></div>;
-};
+  return <div className={styles.chat}>CHAT</div>
+}
 
-export default ManagerChat;
+export default ManagerChat
