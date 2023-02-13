@@ -1,0 +1,45 @@
+.condtionsWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  text-align: center;
+  color: white;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 42px;
+}
+
+.conditionsContainer {
+  width: 1280px;
+  background-color: white;
+  height: 596px;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 10px;
+  margin-top: 66px;
+}
+.hr {
+  width: 840px;
+  height: 0px;
+  left: 299px;
+  top: 318px;
+
+  opacity: 0.3;
+  border: 1px solid #07205e;
+}
+
+.accordHeading {
+
+}
+
+.accordContent {
+ 
+}
