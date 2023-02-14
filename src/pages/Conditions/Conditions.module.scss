@@ -25,21 +25,38 @@
   justify-content: space-around;
   border-radius: 10px;
   margin-top: 66px;
+  padding-bottom: 56px;
 }
 .hr {
   width: 840px;
   height: 0px;
-  left: 299px;
-  top: 318px;
-
   opacity: 0.3;
   border: 1px solid #07205e;
 }
-
 .accordHeading {
-
+  position: absolute;
+  text-align: start;
+  width: 844px;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 22px;
+  color: #07205e;
+  cursor: pointer;
 }
 
 .accordContent {
- 
+  width: 700px;
+  height: 33px;
+  margin-top: 45px;
+  margin-left: 70px;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 22px;
+  text-align: justify;
+  text-justify: inter-word;
+  color: #07205e;
 }
