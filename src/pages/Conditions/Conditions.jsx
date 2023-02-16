@@ -11,12 +11,6 @@ import {
 // import "react-accessible-accordion/dist/fancy-example.css";
 
 const Conditions = () => {
-  const [isRotated, setIsRotated] = useState(false);
-
-  const handleClick = () => {
-    setIsRotated(!isRotated);
-  };
-
   const conditions = [
     {
       heading: "Что нужно иметь при получении автомобиля?",
@@ -46,21 +40,46 @@ const Conditions = () => {
     },
   ];
 
+  const [iconStates, setIconStates] = useState(
+    new Array(conditions.length).fill(false)
+  );
+  const [activeIconIndex, setActiveIconIndex] = useState(-1);
+
+  const handleClick = (index) => {
+    setIconStates((prevState) => {
+      const newState = prevState.map((state, i) =>
+        i === index ? !state : false
+      );
+      setActiveIconIndex(index);
+      return newState;
+    });
+  };
+
   return (
     <div className={styles.conditionsWrapper}>
       <h1 className={styles.title}>Условия аренды</h1>
       <div>
         <Accordion allowZeroExpanded className={styles.conditionsContainer}>
-          {conditions.map((item) => (
+          {conditions.map((item, index) => (
             <AccordionItem key={item.uuid}>
               <hr className={styles.hr} />
-              <AccordionItemHeading onClick={handleClick} className={styles.accordHeading}>
+              <AccordionItemHeading
+                onClick={() => handleClick(index)}
+                className={styles.accordHeading}
+              >
                 <AccordionItemButton
                   style={{ display: "flex", justifyContent: "space-between" }}
                 >
                   {item.heading}
                   <ArrowIcon
-                    style={{ transform: isRotated ? "rotate(180deg)" : "none" }}
+                    style={{
+                      transform:
+                        activeIconIndex === index
+                          ? iconStates[index]
+                            ? "rotate(180deg)"
+                            : "none"
+                          : "none",
+                    }}
                   />
                 </AccordionItemButton>
               </AccordionItemHeading>

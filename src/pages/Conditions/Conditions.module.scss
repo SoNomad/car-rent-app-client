@@ -45,6 +45,17 @@
   color: #07205e;
   cursor: pointer;
 }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .accordContent {
   width: 700px;
@@ -58,5 +69,6 @@
   line-height: 22px;
   text-align: justify;
   text-justify: inter-word;
-  color: #07205e;
-}
+  color: #19357b;
+  animation: fadeIn 0.3s ease-in-out;
+ }
