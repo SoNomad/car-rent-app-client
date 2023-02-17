@@ -5,6 +5,7 @@ import Header from './components/Header/Header'
 import Login from './components/ManagerChat/Login'
 import ManagerChat from './components/ManagerChat/ManagerChat'
 import Register from './components/ManagerChat/Register'
+import SetAvatar from './components/ManagerChat/SetAvatar'
 import AboutUs from './pages/AboutUs/AboutUs'
 import Blog from './pages/Blog/Blog'
 import Conditions from './pages/Conditions/Conditions'
@@ -26,6 +27,7 @@ function App() {
         <Route path="/conditions" element={<Conditions />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/setAvatar" element={<SetAvatar />} />
         <Route path="/chat" element={<ManagerChat />} />
       </Routes>
       <Footer />
