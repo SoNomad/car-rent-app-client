@@ -13,8 +13,7 @@
   font-size: 34px;
   line-height: 42px;
 }
-
-.conditionsContainer {
+.conditionsLayout {
   width: 1280px;
   background-color: white;
   height: 596px;
@@ -27,7 +26,16 @@
   margin-top: 66px;
   padding-bottom: 56px;
 }
+
+.conditionsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 90%;
+  gap: 40px;
+}
 .hr {
+  margin-bottom: 30px;
   width: 840px;
   height: 0px;
   opacity: 0.3;
@@ -56,12 +64,12 @@
   }
 }
 
-
 .accordContent {
   width: 700px;
   height: 33px;
-  margin-top: 45px;
+  margin-top: 65px;
   margin-left: 70px;
+  margin-bottom: 50px;
   font-family: "Gilroy";
   font-style: normal;
   font-weight: 400;
@@ -71,4 +79,4 @@
   text-justify: inter-word;
   color: #19357b;
   animation: fadeIn 0.3s ease-in-out;
- }
+}

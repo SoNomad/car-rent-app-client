@@ -58,7 +58,7 @@ const Conditions = () => {
   return (
     <div className={styles.conditionsWrapper}>
       <h1 className={styles.title}>Условия аренды</h1>
-      <div>
+      <div className={styles.conditionsLayout}>
         <Accordion allowZeroExpanded className={styles.conditionsContainer}>
           {conditions.map((item, index) => (
             <AccordionItem key={item.uuid}>
@@ -66,6 +66,7 @@ const Conditions = () => {
               <AccordionItemHeading
                 onClick={() => handleClick(index)}
                 className={styles.accordHeading}
+                style={{margin:0}}
               >
                 <AccordionItemButton
                   style={{ display: "flex", justifyContent: "space-between" }}

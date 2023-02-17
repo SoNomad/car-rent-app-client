@@ -1,0 +1,93 @@
+.aboutWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #07205e;
+}
+.title {
+  text-align: center;
+  color: white;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 42px;
+}
+.aboutContainer {
+  width: 1080px;
+  background-color: white;
+  height: 1113px;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 60px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 40px;
+  margin-bottom: 108px;
+}
+.aboutHeader {
+  width: 840px;
+  height: 225px;
+}
+.aboutHeaderText {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: justify;
+  color: #07205e;
+  text-align: start;
+  position: absolute;
+  left: 21.04%;
+  right: 20.62%;
+  margin: 17px 217px 37px 223px;
+}
+.logoAbout {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+}
+
+.centerText {
+  display: flex;
+  width: 820px;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.footerText {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-size: 18px;
+  line-height: 22px;
+
+  color: #07205e;
+}
+.footerContainer {
+  display: flex;
+  justify-content: space-around;
+}
+.columnFooter {
+  display: flex;
+  align-items: flex-start;
+  text-align: start;
+  width: 402px;
+  height: 162px;
+  margin: 20px;
+}
+h1 {
+  font-size: 100px;
+  margin: 0;
+}
+span {
+  font-size: 18px;
+}
+.b {
+  margin-left: 20px;
+}

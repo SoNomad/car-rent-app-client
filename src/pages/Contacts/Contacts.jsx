@@ -7,7 +7,19 @@ const Contacts = () => {
     <div className={styles.contactsWrapper}>
       <h1 className={styles.title}>Адрес и контакты</h1>
       <div className={styles.contactsContainer}>
-        <div className={styles.contactsMap}></div>
+        <div className={styles.contactsMap}>
+          <section className="map">
+            <iframe
+              title="myFrame"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23222.263162874176!2d45.68353679309757!3d43.318804040173745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4051d13abc103637%3A0x8601f7fff1cac51f!2zSW50b2NvZGUgQ29kaW5nIEJvb3RjYW1wIOKAkyDRiNC60L7Qu9CwINC_0YDQvtCz0YDQsNC80LzQuNGA0L7QstCw0L3QuNGP!5e0!3m2!1sru!2sru!4v1671410821699!5m2!1sru!2sru"
+              width="594px"
+              height="594px"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </section>
+        </div>
         <div className={styles.contactsInfo}>
           <div className={styles.infoAddres}>
             <span className={styles.titleInfo}>Адрес</span>
@@ -59,7 +71,11 @@ const Contacts = () => {
               alt=""
             />
 
-            <img src={qr} style={{ width: 186, height: 186 }} alt="" />
+            <img
+              src={qr}
+              style={{ width: "186 px", height: "186 px", marginLeft: "73px" }}
+              alt=""
+            />
           </div>
         </div>
       </div>
