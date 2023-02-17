@@ -1,0 +1,82 @@
+.condtionsWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  text-align: center;
+  color: white;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 42px;
+}
+.conditionsLayout {
+  width: 1280px;
+  background-color: white;
+  height: 596px;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 10px;
+  margin-top: 66px;
+  padding-bottom: 56px;
+}
+
+.conditionsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 90%;
+  gap: 40px;
+}
+.hr {
+  margin-bottom: 30px;
+  width: 840px;
+  height: 0px;
+  opacity: 0.3;
+  border: 1px solid #07205e;
+}
+.accordHeading {
+  position: absolute;
+  text-align: start;
+  width: 844px;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 22px;
+  color: #07205e;
+  cursor: pointer;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.accordContent {
+  width: 700px;
+  height: 33px;
+  margin-top: 65px;
+  margin-left: 70px;
+  margin-bottom: 50px;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 22px;
+  text-align: justify;
+  text-justify: inter-word;
+  color: #19357b;
+  animation: fadeIn 0.3s ease-in-out;
+}

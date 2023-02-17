@@ -1,0 +1,100 @@
+.contactsWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.title {
+  text-align: center;
+  color: white;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 42px;
+}
+.contactsContainer {
+  width: 1280px;
+  background-color: white;
+  height: 590px;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 40px;
+}
+.contactsMap {
+  width: 594px;
+  height: 594px;
+}
+.contactsInfo {
+  height: 590px;
+  width: 686px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.infoAddres {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 280px;
+}
+.infoNetwork {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.titleInfo {
+  height: 22px;
+  left: 730px;
+  top: 311px;
+
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: justify;
+
+  color: #07205e;
+
+  opacity: 0.4;
+}
+
+.subtitleInfo {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  margin-top: 10px;
+  text-align: justify;
+  color: #07205e;
+  margin-bottom: 30px;
+}
+section {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+section {
+  div {
+    margin: 0 auto;
+  }
+}
+
+.infokarta {
+  color: rgb(230, 215, 241);
+}
+.location {
+  background: rgb(197, 196, 214);
+  background: linear-gradient(
+    90deg,
+    rgb(29, 29, 94) 0%,
+    rgb(47, 47, 113) 35%,
+    rgba(97, 49, 115, 1) 100%
+  );
+}
