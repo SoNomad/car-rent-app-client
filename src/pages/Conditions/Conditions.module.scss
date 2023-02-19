@@ -1,20 +1,17 @@
-.condtionsWrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.conditionsWrapper {
+  padding: 100px 0 80px 0;
 }
 
 .title {
   text-align: center;
   color: white;
-  font-family: "Gilroy";
   font-style: normal;
   font-weight: 600;
-  font-size: 34px;
+  font-size: 28px;
   line-height: 42px;
 }
 .conditionsLayout {
-  width: 1280px;
+  width: 90%;
   background-color: white;
   height: 596px;
   align-items: center;
@@ -23,7 +20,7 @@
   flex-direction: column;
   justify-content: space-around;
   border-radius: 10px;
-  margin-top: 66px;
+  margin: 3% auto 0 auto;
   padding-bottom: 56px;
 }
 
@@ -43,9 +40,7 @@
 }
 .accordHeading {
   position: absolute;
-  text-align: start;
   width: 844px;
-  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -70,9 +65,6 @@
   margin-top: 65px;
   margin-left: 70px;
   margin-bottom: 50px;
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 400;
   font-size: 20px;
   line-height: 22px;
   text-align: justify;

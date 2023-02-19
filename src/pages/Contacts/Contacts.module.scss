@@ -2,35 +2,36 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 50px;
 }
 .title {
   text-align: center;
   color: white;
-  font-family: "Gilroy";
   font-style: normal;
   font-weight: 600;
   font-size: 34px;
   line-height: 42px;
 }
 .contactsContainer {
-  width: 1280px;
+  width: 90%;
   background-color: white;
   height: 590px;
   align-items: center;
-  text-align: center;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   border-radius: 10px;
   overflow: hidden;
   margin-top: 40px;
 }
 .contactsMap {
-  width: 594px;
-  height: 594px;
+  min-width: 35%;
+  height: 100%;
 }
 .contactsInfo {
-  height: 590px;
-  width: 686px;
+  height: 100%;
+  min-width: 60%;
   display: flex;
   justify-content: space-around;
 }
@@ -49,10 +50,7 @@
 
 .titleInfo {
   height: 22px;
-  left: 730px;
-  top: 311px;
-
-  font-family: "Gilroy";
+  text-align: center;
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
@@ -60,12 +58,9 @@
   text-align: justify;
 
   color: #07205e;
-
-  opacity: 0.4;
 }
 
 .subtitleInfo {
-  font-family: "Gilroy";
   font-style: normal;
   font-weight: 600;
   font-size: 20px;

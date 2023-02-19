@@ -1,7 +1,7 @@
-import React from "react";
-import styles from "./Contacts.module.scss";
-import qr from "./qrcode.png";
-import social from "./social.png";
+import React from 'react';
+import styles from './Contacts.module.scss';
+import qr from './qrcode.png';
+import social from './social.png';
 const Contacts = () => {
   return (
     <div className={styles.contactsWrapper}>
@@ -12,7 +12,7 @@ const Contacts = () => {
             <iframe
               title="myFrame"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23222.263162874176!2d45.68353679309757!3d43.318804040173745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4051d13abc103637%3A0x8601f7fff1cac51f!2zSW50b2NvZGUgQ29kaW5nIEJvb3RjYW1wIOKAkyDRiNC60L7Qu9CwINC_0YDQvtCz0YDQsNC80LzQuNGA0L7QstCw0L3QuNGP!5e0!3m2!1sru!2sru!4v1671410821699!5m2!1sru!2sru"
-              width="594px"
+              width="100%"
               height="594px"
               allowfullscreen=""
               loading="lazy"
@@ -25,8 +25,8 @@ const Contacts = () => {
             <span className={styles.titleInfo}>Адрес</span>
 
             <span className={styles.subtitleInfo}>
-              Перекресток Jomtien Second Road и Soi Bun Kanchana, NongPrue, Bang
-              Lamung, Chon Buri.<br></br>
+              Перекресток Jomtien Second Road и Soi Bun Kanchana, NongPrue, Bang Lamung, Chon Buri.
+              <br></br>
               <br /> 20150, Pattaya, Thailand
             </span>
 
@@ -51,10 +51,7 @@ const Contacts = () => {
 
             <span className={styles.titleInfo}>Почта</span>
 
-            <span
-              className={styles.subtitleInfo}
-              style={{ textDecorationLine: "underline" }}
-            >
+            <span className={styles.subtitleInfo} style={{ textDecorationLine: 'underline' }}>
               makscarrent@gmail.com
             </span>
 
@@ -63,17 +60,17 @@ const Contacts = () => {
             <img
               src={social}
               style={{
-                width: "150px",
-                height: "40px",
-                marginTop: "6px",
-                marginBottom: "35px",
+                width: '150px',
+                height: '40px',
+                marginTop: '6px',
+                marginBottom: '35px',
               }}
               alt=""
             />
 
             <img
               src={qr}
-              style={{ width: "186 px", height: "186 px", marginLeft: "73px" }}
+              style={{ width: '186 px', height: '186 px', marginLeft: '73px' }}
               alt=""
             />
           </div>
