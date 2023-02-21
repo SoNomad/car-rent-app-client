@@ -3,6 +3,7 @@ import styles from './Home.module.scss';
 import { Typography } from '@mui/material';
 import CarSwitcher from '../../components/CarSwitcher/CarSwitcher';
 import BookingForm from '../../components/BookingForm/BookingForm';
+import Products from '../../components/Products/Products';
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
       <main>
         <BookingForm />
       </main>
+      <Products />
     </>
   );
 };

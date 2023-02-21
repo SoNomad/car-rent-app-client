@@ -1,8 +1,8 @@
 import styles from './Booking.module.scss';
-import { Button } from '@mui/material';
 import { DatePicker } from 'antd';
 import Location from './GetLocation';
 import moment from 'moment';
+import CustomButton from '../CustomButton';
 
 const BookingForm = () => {
   const { RangePicker } = DatePicker;
@@ -21,7 +21,7 @@ const BookingForm = () => {
         <Location />
       </div>
 
-      <Button variant="contained">Contained</Button>
+      <CustomButton variant="contained">Применить</CustomButton>
     </div>
   );
 };
