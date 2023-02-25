@@ -13,19 +13,17 @@
 
     .emoji {
       position: relative;
-
       svg {
         font-size: 1.5rem;
         color: #ffff00c8;
         cursor: pointer;
       }
-    }
-    #pick {
-      background-color: #080420;
-      position: absolute;
-      top: -450px;
-      height: 300px;
-      border: 5px solid red;
+      .picker {
+        background-color: #080420;
+        position: absolute;
+        top: -350px;
+        height: 300px;
+      }
     }
   }
 
@@ -38,7 +36,7 @@
     background-color: #ffffff34;
     input {
       width: 90%;
-      height: 60%;
+      /*  height: 60%; */
       background-color: transparent;
       color: white;
       border: none;
