@@ -1,0 +1,35 @@
+.wrapper {
+  margin: 0 auto 80px auto;
+  display: flex;
+  justify-content: center;
+  color: white;
+  width: 90%;
+  .catPanel {
+    flex: 1;
+  }
+  .itemContainer {
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    justify-content: center;
+    .item {
+      display: flex;
+      align-items: center;
+      border-top: 2px solid rgba(255, 255, 255, 0.671);
+      margin-bottom: 50px;
+      padding-top: 10px;
+      .imageBlock {
+        flex: 1;
+      }
+      .itemInfo {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        .details {
+          display: flex;
+        }
+      }
+    }
+  }
+}

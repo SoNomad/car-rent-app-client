@@ -1,7 +1,11 @@
-import React from 'react'
-import styles from './Home.module.scss'
-import { Typography } from '@mui/material'
-import CarSwitcher from '../../components/carSwitcher/CarSwitcher'
+
+import React from 'react';
+import styles from './Home.module.scss';
+import { Typography } from '@mui/material';
+import CarSwitcher from '../../components/CarSwitcher/CarSwitcher';
+import BookingForm from '../../components/BookingForm/BookingForm';
+import Products from '../../components/Products/Products';
+
 
 const Home = () => {
   return (
@@ -24,6 +28,10 @@ const Home = () => {
           <CarSwitcher />
         </div>
       </div>
+      <main>
+        <BookingForm />
+      </main>
+      <Products />
     </>
   )
 }
