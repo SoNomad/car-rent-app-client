@@ -1,8 +1,5 @@
 .active {
   border-bottom: 4px solid white;
-  :hover {
-    cursor: pointer;
-  }
   img {
     transform: scale(1.4);
     transition: transform 0.25s;
@@ -13,9 +10,6 @@
 .inActive {
   border-bottom: 3px solid rgba(255, 255, 255, 0.548);
   transition: border-bottom 0.25s;
-  :hover {
-    cursor: pointer;
-  }
   img {
     transform: scale(1);
     transition: transform 0.25s;
@@ -23,10 +17,16 @@
   }
 }
 
-.items {
+.items,
+.subtitle {
   display: flex;
   justify-content: center;
+  :hover {
+    cursor: pointer;
+  }
   div {
     width: 100%;
+    text-align: center;
+    color: white;
   }
 }
