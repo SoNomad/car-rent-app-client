@@ -1,0 +1,130 @@
+.container {
+  display: grid;
+  grid-template-rows: 10% 75% 15%;
+  overflow: hidden;
+  background-color: #080420;
+  .brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    img {
+      height: 2rem;
+    }
+    h3 {
+      color: white;
+      text-transform: uppercase;
+    }
+  }
+  .current_user {
+    background-color: #9aec2ff5;
+    min-height: 5rem;
+    width: 90%;
+    cursor: pointer;
+    border-radius: 0.6rem;
+    padding: 0.4rem;
+    gap: 1rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    transition: 0.5s ease-in-out;
+    margin-top: 10px;
+    margin-left: 7px;
+    .avatar {
+      img {
+        height: 4rem;
+        max-inline-size: 100%;
+      }
+    }
+    .username {
+      h3 {
+        color: rgb(128, 12, 12);
+      }
+    }
+    @media screen and (min-width: 720px) and (max-width: 1080px) {
+      gap: 0.5rem;
+      .username {
+        h3 {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  .contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    gap: 0.8rem;
+    &::-webkit-scrollbar {
+      width: 0.2rem;
+      &-thumb {
+        background-color: #ffffff39;
+        width: 1rem;
+        border-radius: 1rem;
+      }
+    }
+    .contact {
+      background-color: #ffffff39;
+      min-height: 5rem;
+      width: 90%;
+      cursor: pointer;
+      border-radius: 0.2rem;
+      padding: 0.4rem;
+      gap: 1rem;
+      align-items: center;
+      display: flex;
+      transition: 0.5s ease-in-out;
+      .avatar {
+        img {
+          height: 4rem;
+          max-inline-size: 100%;
+        }
+      }
+      .username {
+        h3 {
+          color: white;
+        }
+      }
+      @media screen and (min-width: 720px) and (max-width: 1080px) {
+        gap: 0.5rem;
+        .username {
+          h3 {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+    .selected {
+      background-color: #411ddf39;
+      min-height: 5rem;
+      width: 90%;
+      cursor: pointer;
+      border-radius: 0.2rem;
+      padding: 0.4rem;
+      gap: 1rem;
+      align-items: center;
+      display: flex;
+      transition: 0.5s ease-in-out;
+      .avatar {
+        img {
+          height: 4rem;
+          max-inline-size: 100%;
+        }
+      }
+      .username {
+        h3 {
+          color: white;
+        }
+      }
+      @media screen and (min-width: 720px) and (max-width: 1080px) {
+        gap: 0.5rem;
+        .username {
+          h3 {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
