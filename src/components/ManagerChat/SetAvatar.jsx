@@ -8,7 +8,8 @@ import axios from 'axios'
 import { Buffer } from 'buffer'
 import { setAvatarRoute } from '../../utils/APIRoutes'
 
-const SetAvatar = () => {
+const SetAvatar = ({GetIsTrueFalse}) => {
+  GetIsTrueFalse()
   const api = 'https://api.multiavatar.com/45678945'
   const navigate = useNavigate()
   const [avatars, setAvatars] = useState([])
@@ -22,7 +23,7 @@ const SetAvatar = () => {
     theme: 'dark',
   }
 
-  useEffect(async () => {
+  useEffect(() => {
     if (!localStorage.getItem('chat-app-user')) {
       navigate('/login')
     }
@@ -36,7 +37,7 @@ const SetAvatar = () => {
       const { data } = await axios.post(`${setAvatarRoute}/${user._id}`, {
         image: avatars[selectedAvatar],
       })
-      console.log(data, 'zzzzzzzzzzz')
+
       if (data.isSet) {
         user.isAvatarImageSet = true
         user.avatarImage = data.image
@@ -47,17 +48,20 @@ const SetAvatar = () => {
       }
     }
   }
-  useEffect(async () => {
-    const data = []
-    for (let i = 0; i < 4; i++) {
-      const image = await axios.get(
-        `${api}/${Math.round(Math.random() * 1000)}`
-      )
-      const buffer = new Buffer(image.data)
-      data.push(buffer.toString('base64'))
+  useEffect( () => {
+    const reqAxios = async () => {
+      const data = []
+      for (let i = 0; i < 4; i++) {
+        const image = await axios.get(
+          `${api}/${Math.round(Math.random() * 1000)}`
+        )
+        const buffer = new Buffer(image.data)
+        data.push(buffer.toString('base64'))
+      }
+      setAvatars(data)
+      setIsLoading(false)
     }
-    setAvatars(data)
-    setIsLoading(false)
+    reqAxios()
   }, [])
 
   return (

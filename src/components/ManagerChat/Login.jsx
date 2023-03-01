@@ -8,7 +8,8 @@ import 'react-toastify/dist/ReactToastify.css'
 import axios from 'axios'
 import { loginRoute } from '../../utils/APIRoutes'
 
-const Login = () => {
+const Login = ({GetIsTrueFalse}) => {
+  GetIsTrueFalse()
   const navigate = useNavigate()
   const [values, setValues] = useState({
     username: '',

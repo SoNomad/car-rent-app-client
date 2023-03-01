@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Route, Routes } from 'react-router'
 import ContactsBar from './components/ContactsBar/ContactsBar'
 import Footer from './components/Footer/Footer'
@@ -14,10 +15,16 @@ import Home from './pages/Home/Home'
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage'
 
 function App() {
+  const [isTrue, setIsTrue] = useState(true)
+
+  const GetIsTrueFalse = () => {
+    setIsTrue(false)
+  }
+
   return (
     <div className="App">
-      <Header />
-      <ContactsBar />
+      {isTrue && <Header />}
+      {isTrue && <ContactsBar />}
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="*" element={<NotFoundPage />} />
@@ -25,10 +32,10 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/conditions" element={<Conditions />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/setAvatar" element={<SetAvatar />} />
-        <Route path="/chat" element={<ManagerChat />} />
+        <Route path="/register" element={<Register GetIsTrueFalse={GetIsTrueFalse}/>} />
+        <Route path="/login" element={<Login GetIsTrueFalse={GetIsTrueFalse}/>} />
+        <Route path="/setAvatar" element={<SetAvatar GetIsTrueFalse={GetIsTrueFalse}/>} />
+        <Route path="/chat" element={<ManagerChat GetIsTrueFalse={GetIsTrueFalse} />} />
       </Routes>
       <Footer />
     </div>
