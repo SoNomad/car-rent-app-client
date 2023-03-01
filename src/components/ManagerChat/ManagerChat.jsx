@@ -8,13 +8,15 @@ import Welcome from './Welcome'
 import ChatContainer from './ChatContainer'
 import { io } from 'socket.io-client'
 
-const ManagerChat = () => {
+const ManagerChat = ({GetIsTrueFalse}) => {
   const socket = useRef()
   const navigate = useNavigate()
   const [contacts, setContacts] = useState([])
   const [currentUser, setCurrentUser] = useState(undefined)
   const [currentChat, setCurrentChat] = useState(undefined)
   const [isLoaded, setIsLoaded] = useState(false)
+
+  GetIsTrueFalse()
 
   useEffect(() => {
     const getUser = async () => {

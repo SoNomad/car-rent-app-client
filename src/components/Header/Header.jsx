@@ -1,7 +1,7 @@
-import { Typography } from '@mui/material';
-import { NavLink } from 'react-router-dom';
-import styles from './Header.module.scss';
-import logo from './logo.png';
+import { Typography } from '@mui/material'
+import { NavLink } from 'react-router-dom'
+import styles from './Header.module.scss'
+import logo from './logo.png'
 
 const Header = () => {
   return (
@@ -15,12 +15,13 @@ const Header = () => {
         <NavLink to="/conditions">Условия аренды</NavLink>
         <NavLink to="/contacts">Контакты</NavLink>
         <NavLink to="/about">О компании</NavLink>
+        <NavLink to="/chat">Онлайн чат для арендаторов</NavLink>
       </div>
       <Typography variant="h6" sx={{ color: 'white' }}>
         89798798797
       </Typography>
     </div>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

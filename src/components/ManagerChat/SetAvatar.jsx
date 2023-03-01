@@ -8,7 +8,8 @@ import axios from 'axios'
 import { Buffer } from 'buffer'
 import { setAvatarRoute } from '../../utils/APIRoutes'
 
-const SetAvatar = () => {
+const SetAvatar = ({GetIsTrueFalse}) => {
+  GetIsTrueFalse()
   const api = 'https://api.multiavatar.com/45678945'
   const navigate = useNavigate()
   const [avatars, setAvatars] = useState([])
@@ -47,7 +48,7 @@ const SetAvatar = () => {
       }
     }
   }
-  useEffect(async () => {
+  useEffect( () => {
     const reqAxios = async () => {
       const data = []
       for (let i = 0; i < 4; i++) {
