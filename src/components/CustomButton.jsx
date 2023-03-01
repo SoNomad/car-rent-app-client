@@ -1,11 +1,11 @@
 import React from 'react';
 import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { orange } from '@mui/material/colors';
+import { brown } from '@mui/material/colors';
 
 //стилизация кнопки MUI
 const ColorButton = styled(Button)(({ theme }) => ({
-  color: theme.palette.getContrastText(orange[500]),
+  color: theme.palette.getContrastText(brown[500]),
   backgroundColor: orange[500],
   '&:hover': {
     backgroundColor: orange[700],
