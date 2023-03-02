@@ -3,14 +3,18 @@ import { DatePicker } from 'antd';
 import Location from './GetLocation';
 import moment from 'moment';
 import CustomButton from '../CustomButton';
+import { useState } from 'react';
 
 const BookingForm = () => {
   const { RangePicker } = DatePicker;
 
+  const [fromDate, setFromDate] = useState();
+  const [toDate, setToDate] = useState();
+
   const filterByDate = (dates) => {
     if (dates !== null) {
-      console.log(moment(dates[0].$d).format('DD-MM-YYYY'));
-      console.log(moment(dates[1].$d).format('DD-MM-YYYY'));
+      setFromDate(moment(dates[0].$d).format('DD-MM-YYYY'));
+      setToDate(moment(dates[1].$d).format('DD-MM-YYYY'));
     }
   };
 

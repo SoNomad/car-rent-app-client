@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { brown } from '@mui/material/colors';
+import { orange } from '@mui/material/colors';
 
 //стилизация кнопки MUI
 const ColorButton = styled(Button)(({ theme }) => ({
