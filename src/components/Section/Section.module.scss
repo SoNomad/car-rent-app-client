@@ -1,0 +1,214 @@
+.mainContainer {
+  width: 100%;
+  display: flex;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+
+    .one {
+      width: 611px;
+      height: 330px;
+      border: 2px solid rgb(255, 255, 255, 0.1);
+      margin-left: 10px;
+
+      .text {
+        width: 471px;
+        height: 275px;
+        font-size: 54px;
+        line-height: 55px;
+        color: #ffffff;
+        margin-left: 45px;
+        margin-top: 30px;
+        text-transform: lowercase;
+      }
+    }
+
+    .two {
+      display: flex;
+      margin-top: 23px;
+      .speedPict {
+        margin-left: 12px;
+
+        .rectangle_7 {
+          width: 100px;
+          height: 100px;
+        }
+      }
+      .textSpeed {
+        display: flex;
+        flex-direction: column;
+        width: 392px;
+        height: 100px;
+        margin-left: 25px;
+
+        .spanTextSpeed1 {
+          color: white;
+        }
+
+        .spanTextSpeed2 {
+          margin-top: 10px;
+          color: rgb(255, 255, 255, 0.3);
+          line-height: 19.2px;
+        }
+      }
+    }
+
+    .three {
+      display: flex;
+      margin-top: 50px;
+
+      .carWithManPict {
+        margin-left: 12px;
+        margin-top: 34px;
+
+        .rectangle_8 {
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      .textCarWithMan {
+        display: flex;
+        flex-direction: column;
+        width: 392px;
+        height: 100px;
+        margin-top: 34px;
+        margin-left: 25px;
+
+        .spanTextCarWithMan1 {
+          color: white;
+        }
+        .spanTextCarWithMan2 {
+          margin-top: 10px;
+          color: rgb(255, 255, 255, 0.3);
+          line-height: 19.2px;
+        }
+      }
+    }
+  }
+
+  .container2 {
+    display: flex;
+    flex-direction: column;
+
+    .four {
+      display: flex;
+      margin-top: 3px;
+      .carWithParachutePict {
+        margin-left: 39px;
+        .rectangle_9 {
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      .TextCarWithParachute {
+        display: flex;
+        flex-direction: column;
+        width: 392px;
+        height: 100px;
+        margin-left: 25px;
+
+        .spanTextCarWithParachute1 {
+          color: white;
+        }
+
+        .spanTextCarWithParachute2 {
+          margin-top: 10px;
+          color: rgb(255, 255, 255, 0.3);
+          line-height: 19.2px;
+        }
+      }
+    }
+
+    .five {
+      display: flex;
+      margin-top: 75px;
+      .gpsNavigatorPict {
+        margin-left: 39px;
+        .rectangle_10 {
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      .textGpsNavigator {
+        display: flex;
+        flex-direction: column;
+        width: 392px;
+        height: 100px;
+        margin-left: 25px;
+
+        .spanGpsNavigator1 {
+          color: white;
+        }
+
+        .spanGpsNavigator2 {
+          margin-top: 10px;
+          color: rgb(255, 255, 255, 0.3);
+          line-height: 19.2px;
+        }
+      }
+    }
+
+    .six {
+      display: flex;
+      margin-top: 75px;
+
+      .babyChairPict {
+        margin-left: 39px;
+        .rectangle_11 {
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      .textBabyChair {
+        display: flex;
+        flex-direction: column;
+        width: 392px;
+        height: 100px;
+        margin-left: 25px;
+
+        .spanTextBabyChair1 {
+          color: white;
+        }
+        .spanTextBabyChair2 {
+          margin-top: 10px;
+          color: rgb(255, 255, 255, 0.3);
+          line-height: 19.2px;
+        }
+      }
+    }
+
+    .seven {
+      display: flex;
+      margin-top: 75px;
+      .dollarPict {
+        margin-left: 39px;
+        .rectangle_12 {
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      .textDollar {
+        display: flex;
+        flex-direction: column;
+        width: 392px;
+        height: 100px;
+        margin-left: 25px;
+        .spanTextDollar1 {
+          color: white;
+        }
+
+        .spanTextDollar2 {
+          margin-top: 10px;
+          color: rgb(255, 255, 255, 0.3);
+          line-height: 19.2px;
+        }
+      }
+    }
+  }
+}

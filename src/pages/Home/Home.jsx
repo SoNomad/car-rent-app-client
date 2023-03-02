@@ -4,6 +4,7 @@ import { Typography } from '@mui/material'
 import BookingForm from '../../components/BookingForm/BookingForm'
 import Products from '../../components/Products/Products'
 import CarSwitcher from '../../components/carSwitcher/carSwitcher'
+import Section from '../../components/Section/Section'
 
 const Home = () => {
   return (
@@ -30,6 +31,7 @@ const Home = () => {
         <BookingForm />
       </main>
       <Products />
+      <Section />
     </>
   )
 }
