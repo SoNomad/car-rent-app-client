@@ -1,18 +1,15 @@
-import React, { useState } from 'react'
-import styles from './carSwitch.module.scss'
-import car from './car.png'
-import car2 from './car2.png'
-import flot from './flot.png'
+import React, { useState } from 'react';
+import styles from './CarSwitch.module.scss';
+import car from './car.png';
+import car2 from './car2.png';
+import flot from './flot.png';
 
 const CarSwitcher = () => {
-
-
   const [active, setActive] = useState('car');
 
-
   const classHandler = (item) => {
-    setActive((prev) => (prev = item))
-  }
+    setActive((prev) => (prev = item));
+  };
 
   return (
     <div>
@@ -42,7 +39,7 @@ const CarSwitcher = () => {
         <div className={styles.item}>Катеры</div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CarSwitcher
+export default CarSwitcher;
