@@ -1,10 +1,10 @@
-import React from 'react';
-import styles from './Home.module.scss';
-import { Typography } from '@mui/material';
-import BookingForm from '../../components/BookingForm/BookingForm';
-import Products from '../../components/Products/Products';
-import CarSwitcher from '../../components/carSwitcher/carSwitcher';
-import Section from '../../components/Section/Section';
+import React from 'react'
+import styles from './Home.module.scss'
+import { Typography } from '@mui/material'
+import BookingForm from '../../components/BookingForm/BookingForm'
+import Products from '../../components/Products/Products'
+import CarSwitcher from '../../components/carSwitcher/carSwitcher'
+import Section from '../../components/Section/Section'
 
 const Home = () => {
   const [getLocation, setGetLocation] = useState(
