@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Home.module.scss'
 import { Typography } from '@mui/material'
 import BookingForm from '../../components/BookingForm/BookingForm'
 import Products from '../../components/Products/Products'
-import CarSwitcher from '../../components/carSwitcher/carSwitcher'
+import CarSwitcher from '../../components/CarSwitcher/carSwitcher'
 import Section from '../../components/Section/Section'
 
 const Home = () => {
@@ -38,7 +38,11 @@ const Home = () => {
           setToDate={setToDate}
         />
       </main>
-      <Products />
+      <Products 
+        getLocation={getLocation} 
+        fromDate={fromDate} 
+        toDate={toDate}
+      />
       <Section />
     </>
   );
