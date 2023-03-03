@@ -51,16 +51,16 @@ const Products = ({ getLocation, fromDate, toDate }) => {
               <div className={styles.details}>
                 <div className={styles.paymentInfo}>
                   <h1 style={{ fontWeight: 400 }}>{car.payPerDay}</h1>
-                  <h3>EUR/day</h3>
+                  <h3>RUB/day</h3>
                   <p>При аренде на 30 дней</p>
-                  <p>30 дней / {car.payPerDay * 30} EUR</p>
+                  <p>30 дней / {car.payPerDay * 30} RUB</p>
                 </div>
                 <div className={styles.desc}>
                   <ul>
                     <li>Автоматич КПП</li>
-                    <li>Багажник 500 л.</li>
+                    <li>{car.engine}</li>
                     <li>Кондиционер</li>
-                    <li>5 мест</li>
+                    <li>{car.seats}</li>
                     <li>Парковочные датчики</li>
                   </ul>
                 </div>
