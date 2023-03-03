@@ -1,5 +1,5 @@
 .mainContainer {
-  width: 100%;
+  max-width: 100%;
   display: flex;
   justify-content: center;
 
@@ -8,13 +8,13 @@
     flex-direction: column;
 
     .one {
-      width: 611px;
+      max-width: 611px;
       height: 330px;
       border: 2px solid rgb(255, 255, 255, 0.1);
       margin-left: 10px;
 
       .text {
-        width: 471px;
+        max-width: 471px;
         height: 275px;
         font-size: 54px;
         line-height: 55px;
@@ -32,7 +32,7 @@
         margin-left: 12px;
 
         .rectangle_7 {
-          width: 100px;
+          max-width: 100px;
           height: 100px;
         }
       }
@@ -64,7 +64,7 @@
         margin-top: 34px;
 
         .rectangle_8 {
-          width: 100px;
+          max-width: 100px;
           height: 100px;
         }
       }
@@ -72,7 +72,7 @@
       .textCarWithMan {
         display: flex;
         flex-direction: column;
-        width: 392px;
+        max-width: 392px;
         height: 100px;
         margin-top: 34px;
         margin-left: 25px;
@@ -99,7 +99,7 @@
       .carWithParachutePict {
         margin-left: 39px;
         .rectangle_9 {
-          width: 100px;
+          max-width: 100px;
           height: 100px;
         }
       }
@@ -107,7 +107,7 @@
       .TextCarWithParachute {
         display: flex;
         flex-direction: column;
-        width: 392px;
+        max-width: 392px;
         height: 100px;
         margin-left: 25px;
 
@@ -129,7 +129,7 @@
       .gpsNavigatorPict {
         margin-left: 39px;
         .rectangle_10 {
-          width: 100px;
+          max-width: 100px;
           height: 100px;
         }
       }
@@ -137,7 +137,7 @@
       .textGpsNavigator {
         display: flex;
         flex-direction: column;
-        width: 392px;
+        max-width: 392px;
         height: 100px;
         margin-left: 25px;
 
@@ -160,7 +160,7 @@
       .babyChairPict {
         margin-left: 39px;
         .rectangle_11 {
-          width: 100px;
+          max-width: 100px;
           height: 100px;
         }
       }
@@ -168,7 +168,7 @@
       .textBabyChair {
         display: flex;
         flex-direction: column;
-        width: 392px;
+        max-width: 392px;
         height: 100px;
         margin-left: 25px;
 
@@ -189,7 +189,7 @@
       .dollarPict {
         margin-left: 39px;
         .rectangle_12 {
-          width: 100px;
+          max-width: 100px;
           height: 100px;
         }
       }
@@ -197,7 +197,7 @@
       .textDollar {
         display: flex;
         flex-direction: column;
-        width: 392px;
+        max-width: 392px;
         height: 100px;
         margin-left: 25px;
         .spanTextDollar1 {

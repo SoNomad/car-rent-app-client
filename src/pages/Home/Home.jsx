@@ -7,9 +7,8 @@ import CarSwitcher from '../../components/CarSwitcher/carSwitcher'
 import Section from '../../components/Section/Section'
 
 const Home = () => {
-  const [getLocation, setGetLocation] = useState(
-    'https://maps.google.com/maps?q=%D0%B3%D1%80%D0%BE%D0%B7%D0%BD%D1%8B%D0%B9&t=&z=13&ie=UTF8&iwloc=&output=embed'
-  );
+
+  const [placeHolder, setPlaceHolder] = useState('Место получения');
   const [fromDate, setFromDate] = useState('');
   const [toDate, setToDate] = useState('');
 
@@ -30,8 +29,8 @@ const Home = () => {
       </div>
       <main>
         <BookingForm
-          getLocation={getLocation}
-          setGetLocation={setGetLocation}
+          placeHolder={placeHolder}
+          setPlaceHolder={setPlaceHolder}
           fromDate={fromDate}
           setFromDate={setFromDate}
           toDate={toDate}
@@ -39,7 +38,7 @@ const Home = () => {
         />
       </main>
       <Products 
-        getLocation={getLocation} 
+        placeHolder={placeHolder} 
         fromDate={fromDate} 
         toDate={toDate}
       />

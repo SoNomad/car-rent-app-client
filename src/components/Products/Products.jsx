@@ -4,11 +4,12 @@ import CustomButton from '../CustomButton';
 import BookingConfirm from '../BookingConfirm/BookingConfirm';
 import axios from '../../app/axios';
 
-const Products = ({ getLocation, fromDate, toDate }) => {
+const Products = ({ placeHolder, fromDate, toDate }) => {
   const [show, setShow] = useState(false);
 
   const [data, setData] = useState();
   const [isLoading, setLoading] = useState(true);
+  const [carId, setCarId] = useState('')
 
   useEffect(() => {
     axios
@@ -23,8 +24,9 @@ const Products = ({ getLocation, fromDate, toDate }) => {
       });
   }, []);
 
-  const handleBooking = () => {
+  const handleBooking = (carById) => {
     setShow(!show);
+    setCarId(carById)
   };
 
   if (isLoading) {
@@ -38,7 +40,7 @@ const Products = ({ getLocation, fromDate, toDate }) => {
         <h4>Минивены</h4>
       </div>
 
-      {show && <BookingConfirm setShow={setShow} />}
+      {show && <BookingConfirm setShow={setShow} car={carId} fromDate={fromDate} toDate={toDate} location={placeHolder}/>}
 
       <div className={styles.itemContainer}>
         {data.map((car) => (
@@ -65,7 +67,7 @@ const Products = ({ getLocation, fromDate, toDate }) => {
                   </ul>
                 </div>
               </div>
-              <div onClick={() => handleBooking()}>
+              <div onClick={() => handleBooking(car)}>
                 <CustomButton variant="contained">Забронировать</CustomButton>
               </div>
             </div>

@@ -4,7 +4,7 @@ import Location from './GetLocation';
 import moment from 'moment';
 import CustomButton from '../CustomButton';
 
-const BookingForm = ({ setFromDate, setToDate, setGetLocation, getLocation }) => {
+const BookingForm = ({ setFromDate, setToDate, setPlaceHolder, placeHolder }) => {
   const { RangePicker } = DatePicker;
 
   const filterByDate = (dates) => {
@@ -18,7 +18,7 @@ const BookingForm = ({ setFromDate, setToDate, setGetLocation, getLocation }) =>
     <div className={styles.wrapper}>
       <RangePicker size="large" format="DD-MM-YYYY" onChange={filterByDate} />
       <div className={styles.location}>
-        <Location getLocation={getLocation} setGetLocation={setGetLocation} />
+        <Location placeHolder={placeHolder} setPlaceHolder={setPlaceHolder} />
       </div>
 
       <CustomButton variant="contained">Применить</CustomButton>

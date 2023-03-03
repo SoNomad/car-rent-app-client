@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { DownOutlined } from '@ant-design/icons';
 import { Dropdown, Space } from 'antd';
 
-const GetLocation = ({ getLocation, setGetLocation }) => {
-  const [placeHolder, setPlaceHolder] = useState('Место получения');
-  const [open, setOpen] = useState(false);
+const GetLocation = ({ placeHolder, setPlaceHolder }) => {
+  const [getLocation, setGetLocation] = useState(
+    'https://maps.google.com/maps?q=%D0%B3%D1%80%D0%BE%D0%B7%D0%BD%D1%8B%D0%B9&t=&z=13&ie=UTF8&iwloc=&output=embed'
+  );
+    const [open, setOpen] = useState(false);
 
   const handleMenuClick = (e) => {
     setPlaceHolder(e.key);
