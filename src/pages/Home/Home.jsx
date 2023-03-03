@@ -1,3 +1,11 @@
+import React from 'react';
+import styles from './Home.module.scss';
+import { Typography } from '@mui/material';
+import BookingForm from '../../components/BookingForm/BookingForm';
+import Products from '../../components/Products/Products';
+import CarSwitcher from '../../components/carSwitcher/carSwitcher';
+import Section from '../../components/Section/Section';
+
 const Home = () => {
   const [getLocation, setGetLocation] = useState(
     'https://maps.google.com/maps?q=%D0%B3%D1%80%D0%BE%D0%B7%D0%BD%D1%8B%D0%B9&t=&z=13&ie=UTF8&iwloc=&output=embed'
@@ -31,6 +39,7 @@ const Home = () => {
         />
       </main>
       <Products />
+      <Section />
     </>
   );
 };
