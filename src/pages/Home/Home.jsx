@@ -37,14 +37,7 @@ const Home = () => {
           setToDate={setToDate}
         />
       </main>
-      <Products
-        getLocation={getLocation}
-        setGetLocation={setGetLocation}
-        fromDate={fromDate}
-        setFromDate={setFromDate}
-        toDate={toDate}
-        setToDate={setToDate}
-      />
+      <Products />
     </>
   );
 };
