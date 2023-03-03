@@ -37,7 +37,7 @@ function App() {
         <Route path="/setAvatar" element={<SetAvatar GetIsTrueFalse={GetIsTrueFalse}/>} />
         <Route path="/chat" element={<ManagerChat GetIsTrueFalse={GetIsTrueFalse} />} />
       </Routes>
-      <Footer />
+      {isTrue && <Footer />}
     </div>
   )
 }

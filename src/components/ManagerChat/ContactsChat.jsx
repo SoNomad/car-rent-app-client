@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import styles from './ContactsChat.module.scss'
 import CarBrand from './Logo/CarBrand.png'
 
@@ -23,10 +24,13 @@ const ContactsChat = ({ contacts, currentUser, changeChat }) => {
     <>
       {currentUserImage && currentUserName && (
         <div className={styles.container}>
-          <div className={styles.brand}>
-            <img src={CarBrand} alt="logotip" />
-            <h3>samui</h3>
-          </div>
+          <NavLink to="/">
+            <div className={styles.brand}>
+              <img src={CarBrand} alt="logotip" />
+              <h3>samui</h3>
+            </div>
+          </NavLink>
+
           <div className={styles.contacts}>
             {contacts.map((contact, index) => {
               return (

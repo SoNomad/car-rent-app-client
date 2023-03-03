@@ -1,0 +1,63 @@
+.mainContainer {
+  margin-top: 119px;
+  height: 150px;
+  hr {
+    width: 1280px;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255, 0.4);
+    height: 1px;
+    border: none;
+    &:hover {
+      background-color: rgb(255, 255, 255, 1);
+    }
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .container1 {
+      display: flex;
+      flex-direction: column;
+
+      .samuiPict {
+      }
+
+      .socialMediaPict {
+        display: flex;
+        justify-content: center;
+
+        .telegram {
+        }
+
+        .watsapp {
+          margin-left: 10px;
+        }
+
+        .snapchat {
+          margin-left: 10px;
+        }
+      }
+    }
+    .container2 {
+      font-size: 32px;
+      color: white;
+    }
+    .container3 {
+      display: flex;
+      flex-direction: column;
+
+      .navlink {
+        margin-top: 10px;
+        color: rgb(255, 255, 255, 0.4);
+      }
+    }
+    .container4 {
+      display: flex;
+      flex-direction: column;
+      .navlink {
+        margin-top: 10px;
+        color: rgb(255, 255, 255, 0.4);
+      }
+    }
+  }
+}

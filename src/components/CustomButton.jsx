@@ -11,10 +11,10 @@ const ColorButton = styled(Button)(({ theme }) => ({
   '&:hover': {
     backgroundColor: orange[700],
   },
-}));
+}))
 
 const CustomButton = (props) => {
-  return <ColorButton variant="contained">{props.children}</ColorButton>;
-};
+  return <ColorButton variant="contained">{props.children}</ColorButton>
+}
 
-export default CustomButton;
+export default CustomButton
