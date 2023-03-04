@@ -2,7 +2,7 @@ import styles from './Booking.module.scss';
 import { DatePicker } from 'antd';
 import Location from './GetLocation';
 import moment from 'moment';
-import CustomButton from '../CustomButton';
+// import CustomButton from '../CustomButton';
 
 const BookingForm = ({ setFromDate, setToDate, setPlaceHolder, placeHolder }) => {
   const { RangePicker } = DatePicker;
@@ -21,7 +21,7 @@ const BookingForm = ({ setFromDate, setToDate, setPlaceHolder, placeHolder }) =>
         <Location placeHolder={placeHolder} setPlaceHolder={setPlaceHolder} />
       </div>
 
-      <CustomButton variant="contained">Применить</CustomButton>
+      {/* <CustomButton variant="contained">Применить</CustomButton> */}
     </div>
   );
 };

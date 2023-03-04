@@ -1,16 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Products.module.scss';
-import CustomButton from '../CustomButton';
+import { Button } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { brown } from '@mui/material/colors';
+import { orange } from '@mui/material/colors';
 import BookingConfirm from '../BookingConfirm/BookingConfirm';
 import axios from '../../app/axios';
 
 const Products = ({ placeHolder, fromDate, toDate }) => {
-  const [show, setShow] = useState(false);
+  //стилизация кнопки MUI
+  const ColorButton = styled(Button)(({ theme }) => ({
+    color: theme.palette.getContrastText(brown[500]),
+    backgroundColor: orange[500],
+    '&:hover': {
+      backgroundColor: orange[700],
+    },
+  }));
 
-  const [data, setData] = useState();
-  const [isLoading, setLoading] = useState(true);
-  const [carId, setCarId] = useState('')
+  const [show, setShow] = useState(false); //стэйт для показа окна заказа
+  const [data, setData] = useState(); // для даты с календаря
+  const [isLoading, setLoading] = useState(true); // для лоадера
+  const [carId, setCarId] = useState(''); //для передачи айди в кнопку брони
 
+  //фетч списка авто
   useEffect(() => {
     axios
       .get('/car')
@@ -24,14 +36,18 @@ const Products = ({ placeHolder, fromDate, toDate }) => {
       });
   }, []);
 
+  //хэндлер для отправки конкретного авто в окно заказа и открытия окна
   const handleBooking = (carById) => {
     setShow(!show);
-    setCarId(carById)
+    setCarId(carById);
   };
 
+  //лоадер
   if (isLoading) {
     return <div>Loading...</div>;
   }
+
+  //категории
   return (
     <div className={styles.wrapper}>
       <div className={styles.catPanel}>
@@ -40,11 +56,20 @@ const Products = ({ placeHolder, fromDate, toDate }) => {
         <h4>Минивены</h4>
       </div>
 
-      {show && <BookingConfirm setShow={setShow} car={carId} fromDate={fromDate} toDate={toDate} location={placeHolder}/>}
-
+      {/* открытие кона заказа и передача в него информации о датах и адресе */}
+      {show && (
+        <BookingConfirm
+          setShow={setShow}
+          car={carId}
+          fromDate={fromDate}
+          toDate={toDate}
+          location={placeHolder}
+        />
+      )}
+      {/* маппинг списка полученных авто */}
       <div className={styles.itemContainer}>
         {data.map((car) => (
-          <div className={styles.item}>
+          <div className={styles.item} key={car._id}>
             <div className={styles.imageBlock}>
               <img src={car.imageUrl} alt="" height={120} />
             </div>
@@ -67,8 +92,14 @@ const Products = ({ placeHolder, fromDate, toDate }) => {
                   </ul>
                 </div>
               </div>
-              <div onClick={() => handleBooking(car)}>
-                <CustomButton variant="contained">Забронировать</CustomButton>
+              <div>
+                <ColorButton
+                  variant="contained"
+                  disabled={fromDate && placeHolder !== 'Место получения' ? false : true}
+                  onClick={() => handleBooking(car)}
+                >
+                  Забронировать
+                </ColorButton>
               </div>
             </div>
           </div>
