@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './CarSwitch.module.scss';
+import styles from './carSwitch.module.scss';
 import moto from './moto.png';
 import car2 from './car2.png';
 import flot from './flot.png';

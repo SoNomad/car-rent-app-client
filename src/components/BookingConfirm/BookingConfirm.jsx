@@ -1,10 +1,10 @@
 import { Button, TextField, Typography } from '@mui/material';
 import moment from 'moment';
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import styles from './BookingConfirm.module.scss';
 import { useForm } from 'react-hook-form';
-import { useDispatch } from 'react-redux';
-import InputMask from 'react-input-mask';
+import { createBooking } from '../../app/slices/bookingSlice';
 
 const BookingConfirm = ({ setShow, car, location, fromDate, toDate }) => {
   //расчет длительности аренды по дням
@@ -14,19 +14,40 @@ const BookingConfirm = ({ setShow, car, location, fromDate, toDate }) => {
   const totalPayment = totalDays * car.payPerDay; //сумма за все дни
 
   const dispatch = useDispatch();
+  const isLoading = useSelector((state) => state.isLoading);
+  const error = useSelector((state) => state.error);
 
-  //методы
+  //методы react-hook-form
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({ mode: 'onSubmit' });
 
+  //запрос на создание записи об аренде
   const onSubmit = async (value) => {
-    // await dispatch(fetchBook(value));
-    alert(value);
+    const fields = {
+      ...value,
+      _carId: car._id,
+      location,
+      fromDate,
+      toDate,
+      totalDays,
+      totalPayment,
+    };
+    await dispatch(createBooking(fields));
+
+    if (error !== '') {
+      return alert(error);
+    }
+
+    if (!isLoading || error === '') {
+      setShow(false);
+      alert('Машина забронирована');
+    }
   };
 
+  //верстка
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
@@ -59,7 +80,7 @@ const BookingConfirm = ({ setShow, car, location, fromDate, toDate }) => {
                   value: /^([A-Za-zА-Яа-яЁё\s]+)$/i,
                   message: 'ФИО должно содержать только буквы',
                 },
-                minLength: { value: 5, message: 'Минимум 6 символов' },
+                minLength: { value: 5, message: 'Минимум 4 символа' },
               })}
               error={!!errors.name}
               helperText={errors?.name ? errors?.name?.message : null}
@@ -70,7 +91,7 @@ const BookingConfirm = ({ setShow, car, location, fromDate, toDate }) => {
               InputProps={{ className: styles.textfield__label }}
               focused
               fullWidth
-            ></TextField>
+            />
 
             {/* ИНПУТ ДЛЯ ИМЕЙЛА */}
             <TextField
@@ -89,7 +110,7 @@ const BookingConfirm = ({ setShow, car, location, fromDate, toDate }) => {
               InputProps={{ className: styles.textfield__label }}
               focused
               fullWidth
-            ></TextField>
+            />
 
             {/* ИНПУТ ДЛЯ НОМЕРА */}
             <TextField
@@ -98,7 +119,10 @@ const BookingConfirm = ({ setShow, car, location, fromDate, toDate }) => {
               {...register('tel', {
                 required: 'Укажите номер правильно',
                 minLength: { value: 6, message: 'Минимум 6 цифр' },
-                pattern: /0-9/i,
+                pattern: {
+                  value: /^\d+$/,
+                  message: 'Введите корректный формат номера',
+                },
               })}
               error={!!errors.tel}
               helperText={errors?.tel ? errors?.tel?.message : null}
@@ -113,6 +137,9 @@ const BookingConfirm = ({ setShow, car, location, fromDate, toDate }) => {
             {/* ИНПУТ ДЛЯ КОММЕНТА */}
             <TextField
               id="filled-multiline-static"
+              {...register('coment', {
+                required: 'Укажите coment',
+              })}
               label="Комментарий"
               multiline
               rows={4}
@@ -122,7 +149,7 @@ const BookingConfirm = ({ setShow, car, location, fromDate, toDate }) => {
               InputProps={{ className: styles.textfield__label }}
               focused
               fullWidth
-            ></TextField>
+            />
 
             <Button
               // disabled={isLoading}
