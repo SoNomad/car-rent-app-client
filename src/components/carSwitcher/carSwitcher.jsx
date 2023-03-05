@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import styles from './CarSwitch.module.scss';
-import car from './car.png';
+import styles from './carSwitch.module.scss';
+import moto from './moto.png';
 import car2 from './car2.png';
 import flot from './flot.png';
 
@@ -15,14 +15,14 @@ const CarSwitcher = () => {
     <div>
       <div className={styles.items}>
         <div
-          className={active === 'car' ? styles.active : styles.inActive}
-          onClick={() => classHandler('car')}
+          className={active === 'moto' ? styles.active : styles.inActive}
+          onClick={() => classHandler('moto')}
         >
-          <img src={car} alt="" height={50} />
+          <img src={moto} alt="" height={50} />
         </div>
         <div
-          className={active === 'jeep' ? styles.active : styles.inActive}
-          onClick={() => classHandler('jeep')}
+          className={active === 'car' ? styles.active : styles.inActive}
+          onClick={() => classHandler('car')}
         >
           <img src={car2} alt="" height={50} />
         </div>
@@ -34,8 +34,8 @@ const CarSwitcher = () => {
         </div>
       </div>
       <div className={styles.subtitle}>
-        <div className={styles.item}>Авто</div>
         <div className={styles.item}>Мото</div>
+        <div className={styles.item}>Авто</div>
         <div className={styles.item}>Катеры</div>
       </div>
     </div>
