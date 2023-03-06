@@ -57,22 +57,35 @@ const Contacts = () => {
 
             <span className={styles.titleInfo}>Соцсети</span>
 
-            <img
-              src={social}
-              style={{
-                width: '150px',
-                height: '40px',
-                marginTop: '6px',
-                marginBottom: '35px',
-              }}
-              alt=""
-            />
-
-            <img
-              src={qr}
-              style={{ width: '186 px', height: '186 px', marginLeft: '73px' }}
-              alt=""
-            />
+            <a
+              title="Telegram"
+              href="https://telegram.me/inthisreality"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={social}
+                style={{
+                  width: '150px',
+                  height: '40px',
+                  marginTop: '6px',
+                  marginBottom: '35px',
+                }}
+                alt=""
+              />{' '}
+            </a>
+            <a
+              title="Whatsapp"
+              href="https://wa.me/79288995198?text=Здравствуйте,%20аренда%20машин%20САМУИ%20"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={qr}
+                style={{ width: '186 px', height: '186 px', marginLeft: '73px' }}
+                alt=""
+              />{' '}
+            </a>
           </div>
         </div>
       </div>
