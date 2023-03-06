@@ -17,7 +17,18 @@ export const createBooking = createAsyncThunk('books/post', async (params, thunk
     const { data } = await axios.post('/booking', params);
     return data;
   } catch (error) {
-    return thunkAPI.rejectWithValue(error.response.data.error);
+    return thunkAPI.rejectWithValue(error);
+  }
+});
+
+//FETCH НА ПРОВЕРКУ ДАТЫ
+export const checkReserved = createAsyncThunk('books/check', async (params, thunkAPI) => {
+  try {
+    const { data } = await axios.post('/booking/check', params);
+    console.log(data);
+    return data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error);
   }
 });
 
@@ -32,8 +43,8 @@ export const deleteBooking = createAsyncThunk('books/delete', async (id, thunkAP
 
 const initialState = {
   bookings: [],
-  isLoading: false,
-  error: '',
+  isLoading: true,
+  error: null,
 };
 
 const bookSlice = createSlice({
@@ -58,21 +69,28 @@ const bookSlice = createSlice({
       ///СОЗДАНИЕ БУКИНГА
       .addCase(createBooking.pending, (state) => {
         state.isLoading = true;
-        state.error = '';
       })
       .addCase(createBooking.fulfilled, (state, action) => {
         state.bookings = action.payload;
         state.isLoading = false;
-        state.error = '';
       })
       .addCase(createBooking.rejected, (state, action) => {
         state.bookings = [];
-        state.error = action.payload;
-        state.isLoading = true;
+        state.isLoading = false;
       })
       //УДАЛЕНИЕ БУКИНГА
       .addCase(deleteBooking.pending, (state, action) => {
         state.bookings = state.bookings.filter((item) => item._id !== action.meta.arg);
+      })
+      //ПРОВЕРКА ДАТЫ
+      .addCase(checkReserved.pending, (state) => {
+        state.error = null;
+      })
+      .addCase(checkReserved.fulfilled, (state, action) => {
+        state.error = action.payload;
+      })
+      .addCase(checkReserved.rejected, (state) => {
+        state.error = null;
       });
   },
 });

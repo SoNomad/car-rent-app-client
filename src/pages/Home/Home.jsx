@@ -6,7 +6,8 @@ import Products from '../../components/Products/Products';
 import CarSwitcher from '../../components/carSwitcher/carSwitcher';
 import Section from '../../components/Section/Section';
 
-const Home = () => {
+const Home = ({ setIsTrue }) => {
+  setIsTrue(true);
   const [placeHolder, setPlaceHolder] = useState('Место получения');
   const [fromDate, setFromDate] = useState('');
   const [toDate, setToDate] = useState('');

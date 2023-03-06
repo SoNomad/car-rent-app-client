@@ -6,6 +6,8 @@ import { brown } from '@mui/material/colors';
 import { orange } from '@mui/material/colors';
 import BookingConfirm from '../BookingConfirm/BookingConfirm';
 import axios from '../../app/axios';
+import { useDispatch } from 'react-redux';
+import { checkReserved } from '../../app/slices/bookingSlice';
 
 const Products = ({ placeHolder, fromDate, toDate }) => {
   //стилизация кнопки MUI
@@ -17,6 +19,7 @@ const Products = ({ placeHolder, fromDate, toDate }) => {
     },
   }));
 
+  const dispatch = useDispatch();
   const [show, setShow] = useState(false); //стэйт для показа окна заказа
   const [data, setData] = useState(); // для даты с календаря
   const [isLoading, setLoading] = useState(true); // для лоадера
@@ -37,7 +40,9 @@ const Products = ({ placeHolder, fromDate, toDate }) => {
   }, []);
 
   //хэндлер для отправки конкретного авто в окно заказа и открытия окна
-  const handleBooking = (carById) => {
+  const handleBooking = async (carById) => {
+    const params = { _carId: carById._id, fromDate, toDate };
+    await dispatch(checkReserved(params));
     setShow(!show);
     setCarId(carById);
   };
