@@ -30,7 +30,7 @@ function App() {
       {isTrue && <Links />}
 
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<Home setIsTrue={setIsTrue} />} />
         <Route path="*" element={<NotFoundPage />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/blog" element={<Blog />} />

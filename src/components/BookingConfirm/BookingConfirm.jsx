@@ -35,13 +35,16 @@ const BookingConfirm = ({ setShow, car, location, fromDate, toDate }) => {
       totalDays,
       totalPayment,
     };
+
     await dispatch(createBooking(fields));
 
-    if (error !== '') {
-      return alert(error);
+    if (isLoading) {
+      return <div>Загрузка</div>;
     }
 
-    if (!isLoading || error === '') {
+    if (error) {
+      return alert(error);
+    } else {
       setShow(false);
       alert('Машина забронирована');
     }
