@@ -66,18 +66,6 @@ const bookSlice = createSlice({
         state.bookings = [];
         state.isLoading = true;
       })
-      ///СОЗДАНИЕ БУКИНГА
-      .addCase(createBooking.pending, (state) => {
-        state.isLoading = true;
-      })
-      .addCase(createBooking.fulfilled, (state, action) => {
-        state.bookings = action.payload;
-        state.isLoading = false;
-      })
-      .addCase(createBooking.rejected, (state, action) => {
-        state.bookings = [];
-        state.isLoading = true;
-      })
       //УДАЛЕНИЕ БУКИНГА
       .addCase(deleteBooking.pending, (state, action) => {
         state.bookings = state.bookings.filter((item) => item._id !== action.meta.arg);

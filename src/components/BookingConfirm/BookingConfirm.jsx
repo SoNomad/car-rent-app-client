@@ -36,10 +36,6 @@ const BookingConfirm = ({ setShow, car, location, fromDate, toDate }) => {
       totalPayment,
     };
 
-    if (isLoading) {
-      return <div>Загрузка</div>;
-    }
-
     if (error) {
       return alert(error);
     } else {
