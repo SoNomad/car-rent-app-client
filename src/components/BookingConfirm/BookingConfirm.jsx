@@ -25,7 +25,7 @@ const BookingConfirm = ({ setShow, car, location, fromDate, toDate }) => {
   } = useForm({ mode: 'onSubmit' });
 
   //запрос на создание записи об аренде
-  const onSubmit = async (value) => {
+  const onSubmit = (value) => {
     const fields = {
       ...value,
       _carId: car._id,
@@ -36,8 +36,6 @@ const BookingConfirm = ({ setShow, car, location, fromDate, toDate }) => {
       totalPayment,
     };
 
-    await dispatch(createBooking(fields));
-
     if (isLoading) {
       return <div>Загрузка</div>;
     }
@@ -45,6 +43,7 @@ const BookingConfirm = ({ setShow, car, location, fromDate, toDate }) => {
     if (error) {
       return alert(error);
     } else {
+      dispatch(createBooking(fields));
       setShow(false);
       alert('Машина забронирована');
     }

@@ -76,7 +76,7 @@ const bookSlice = createSlice({
       })
       .addCase(createBooking.rejected, (state, action) => {
         state.bookings = [];
-        state.isLoading = false;
+        state.isLoading = true;
       })
       //УДАЛЕНИЕ БУКИНГА
       .addCase(deleteBooking.pending, (state, action) => {
