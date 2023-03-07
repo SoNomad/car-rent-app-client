@@ -14,7 +14,6 @@ const BookingConfirm = ({ setShow, car, location, fromDate, toDate }) => {
   const totalPayment = totalDays * car.payPerDay; //сумма за все дни
 
   const dispatch = useDispatch();
-  const isLoading = useSelector((state) => state.isLoading);
   const error = useSelector((state) => state.error);
 
   //методы react-hook-form
