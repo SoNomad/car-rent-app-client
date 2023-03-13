@@ -6,7 +6,7 @@ import styles from './BookingConfirm.module.scss';
 import { useForm } from 'react-hook-form';
 import { createBooking } from '../../app/slices/bookingSlice';
 
-const BookingConfirm = ({ setShow, car, location, fromDate, toDate }) => {
+const BookingConfirm = ({ setShow, car, location, fromDate, toDate, type }) => {
   //расчет длительности аренды по дням
   const fromDateFormat = moment(fromDate, 'DD-MM-YYYY'); // перевод в формат для расчета длительности
   const toDateFormat = moment(toDate, 'DD-MM-YYYY'); // перевод в формат для расчета длительности
@@ -27,6 +27,7 @@ const BookingConfirm = ({ setShow, car, location, fromDate, toDate }) => {
   const onSubmit = (value) => {
     const fields = {
       ...value,
+      type,
       _carId: car._id,
       location,
       fromDate,

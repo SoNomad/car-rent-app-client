@@ -27,14 +27,15 @@ const Products = ({ placeHolder, fromDate, toDate, active, page, setPage }) => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`/${active}?page=${page}`)
+      .get(`/vehicle/${active}?page=${page}`)
       .then((res) => {
-        setData(res.data?.cars || res.data?.bikes || res.data?.ships);
+        setData(res.data.transport);
         setPageCount(res.data.pageCount);
         setLoading(false);
       })
       .catch((err) => {
         console.log(err);
+        setLoading(true);
       });
   }, [page, active]);
 
@@ -58,6 +59,7 @@ const Products = ({ placeHolder, fromDate, toDate, active, page, setPage }) => {
         {/* открытие кона заказа и передача в него информации о датах и адресе */}
         {show && (
           <BookingConfirm
+            type={active}
             setShow={setShow}
             car={carId}
             fromDate={fromDate}
