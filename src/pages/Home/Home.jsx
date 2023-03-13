@@ -13,6 +13,8 @@ const Home = ({ setIsTrue }) => {
   const [placeHolder, setPlaceHolder] = useState('Место получения');
   const [fromDate, setFromDate] = useState('');
   const [toDate, setToDate] = useState('');
+  const [active, setActive] = useState('car');
+  const [page, setPage] = useState(1);
 
   return (
     <>
@@ -25,9 +27,9 @@ const Home = ({ setIsTrue }) => {
           scrollamount="5"
           className={styles.clouds}
         >
-          <img src={clouds}></img>
+          <img src={clouds} alt="clouds" />
         </marquee>
-        <img src={gradient} width="100%" className={styles.gradient} />
+        <img src={gradient} alt="gradient" width="100%" className={styles.gradient} />
         <div className={styles.logoName}>
           <Typography mr={2} pr={2} variant="h1" sx={{ color: 'white', fontWeight: 400 }}>
             Самуи
@@ -37,7 +39,7 @@ const Home = ({ setIsTrue }) => {
           </Typography>
         </div>
         <div className={styles.switcher}>
-          <CarSwitcher />
+          <CarSwitcher active={active} setActive={setActive} setPage={setPage} />
         </div>
       </div>
       <main>
@@ -50,7 +52,14 @@ const Home = ({ setIsTrue }) => {
           setToDate={setToDate}
         />
       </main>
-      <Products placeHolder={placeHolder} fromDate={fromDate} toDate={toDate} />
+      <Products
+        placeHolder={placeHolder}
+        fromDate={fromDate}
+        toDate={toDate}
+        active={active}
+        page={page}
+        setPage={setPage}
+      />
       <Section />
     </>
   );

@@ -1,22 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './carSwitch.module.scss';
 import moto from './moto.png';
 import car2 from './car2.png';
 import flot from './flot.png';
 
-const CarSwitcher = () => {
-  const [active, setActive] = useState('car');
-
+const CarSwitcher = ({ active, setActive, setPage }) => {
   const classHandler = (item) => {
     setActive((prev) => (prev = item));
+    setPage(1);
   };
 
   return (
     <div>
       <div className={styles.items}>
         <div
-          className={active === 'moto' ? styles.active : styles.inActive}
-          onClick={() => classHandler('moto')}
+          className={active === 'bike' ? styles.active : styles.inActive}
+          onClick={() => classHandler('bike')}
         >
           <img src={moto} alt="" height={50} />
         </div>
