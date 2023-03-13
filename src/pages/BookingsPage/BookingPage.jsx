@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import styles from './BookingPage.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteBooking, fetchBooks } from '../../app/slices/bookingSlice';
-import { Button, Typography } from '@mui/material';
+import { Button, Skeleton, Typography } from '@mui/material';
 
 const BookingPage = () => {
   const dispatch = useDispatch();
@@ -14,7 +14,11 @@ const BookingPage = () => {
   }, [dispatch]);
 
   if (isLoading) {
-    return <h3>Загрузка...</h3>;
+    return (
+      <div style={{ height: '80vh', width: '100%', display: 'flex', justifyContent: 'center' }}>
+        <Skeleton width="80%" height="120%" />
+      </div>
+    );
   }
 
   const onClickRemove = (id) => {
