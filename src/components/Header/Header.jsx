@@ -18,7 +18,7 @@ const Header = () => {
         <NavLink to="/chat">Онлайн чат для клиентов</NavLink>
       </div>
       <Typography variant="h6" sx={{ color: 'white' }}>
-        <NavLink to="/bookings">Админка</NavLink>
+        <NavLink to="/bookings">Вход/Регистрация</NavLink>
       </Typography>
     </div>
   );

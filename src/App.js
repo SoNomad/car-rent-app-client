@@ -1,3 +1,5 @@
+import { ThemeProvider } from '@mui/material';
+import { createTheme } from '@mui/material/styles';
 import { useState } from 'react';
 import { Route, Routes } from 'react-router';
 import ContactsBar from './components/ContactsBar/ContactsBar';
@@ -23,27 +25,37 @@ function App() {
     setIsTrue(false);
   };
 
-  return (
-    <div className="App">
-      {isTrue && <Header />}
-      {isTrue && <ContactsBar />}
-      {isTrue && <Links />}
+  const theme = createTheme({
+    palette: {
+      text: {
+        primary: '#FFFF',
+      },
+    },
+  });
 
-      <Routes>
-        <Route exact path="/" element={<Home setIsTrue={setIsTrue} />} />
-        <Route path="*" element={<NotFoundPage />} />
-        <Route path="/contacts" element={<Contacts />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/bookings" element={<BookingPage />} />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="/conditions" element={<Conditions />} />
-        <Route path="/register" element={<Register GetIsTrueFalse={GetIsTrueFalse} />} />
-        <Route path="/login" element={<Login GetIsTrueFalse={GetIsTrueFalse} />} />
-        <Route path="/setAvatar" element={<SetAvatar GetIsTrueFalse={GetIsTrueFalse} />} />
-        <Route path="/chat" element={<ManagerChat GetIsTrueFalse={GetIsTrueFalse} />} />
-      </Routes>
-      {isTrue && <Footer />}
-    </div>
+  return (
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        {isTrue && <Header />}
+        {isTrue && <ContactsBar />}
+        {isTrue && <Links />}
+
+        <Routes>
+          <Route exact path="/" element={<Home setIsTrue={setIsTrue} />} />
+          <Route path="*" element={<NotFoundPage />} />
+          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/bookings" element={<BookingPage />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/conditions" element={<Conditions />} />
+          <Route path="/register" element={<Register GetIsTrueFalse={GetIsTrueFalse} />} />
+          <Route path="/login" element={<Login GetIsTrueFalse={GetIsTrueFalse} />} />
+          <Route path="/setAvatar" element={<SetAvatar GetIsTrueFalse={GetIsTrueFalse} />} />
+          <Route path="/chat" element={<ManagerChat GetIsTrueFalse={GetIsTrueFalse} />} />
+        </Routes>
+        {isTrue && <Footer />}
+      </div>
+    </ThemeProvider>
   );
 }
 
