@@ -12,11 +12,13 @@
 - Онлайн-чат для пользователей и технической поддержки
 - Панель админа (дорабатывается)
 - Возможности CRUD-операций для админа
-## Технологии проекта
----
 
 ## Процесс бронирования
+---
 ![booking](https://github.com/SoNomad/car-rent-app-client/blob/main/readme/%D0%91%D1%80%D0%BE%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.gif)
+
+## Технологии проекта
+---
 
 <p>
   <img alt="React" src="https://img.shields.io/badge/-React-45b8d8?style=for-the-badge&logo=react&logoColor=white" />
