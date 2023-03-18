@@ -10,9 +10,6 @@ import gradient from './gradient.png';
 
 const Home = ({ setIsTrue }) => {
   setIsTrue(true);
-  const [placeHolder, setPlaceHolder] = useState('Место получения');
-  const [fromDate, setFromDate] = useState('');
-  const [toDate, setToDate] = useState('');
   const [active, setActive] = useState('car');
   const [page, setPage] = useState(1);
 
@@ -43,23 +40,9 @@ const Home = ({ setIsTrue }) => {
         </div>
       </div>
       <main>
-        <BookingForm
-          placeHolder={placeHolder}
-          setPlaceHolder={setPlaceHolder}
-          fromDate={fromDate}
-          setFromDate={setFromDate}
-          toDate={toDate}
-          setToDate={setToDate}
-        />
+        <BookingForm />
       </main>
-      <Products
-        placeHolder={placeHolder}
-        fromDate={fromDate}
-        toDate={toDate}
-        active={active}
-        page={page}
-        setPage={setPage}
-      />
+      <Products active={active} page={page} setPage={setPage} />
       <Section />
     </>
   );

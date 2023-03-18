@@ -1,7 +1,11 @@
 import React from 'react';
 import { Button } from '@mui/material';
+import { useSelector } from 'react-redux';
 
-const ProductModule = ({ car, styles, fromDate, active, handleBooking, placeHolder }) => {
+const ProductModule = ({ car, styles, handleBooking }) => {
+  const fromDate = useSelector((state) => state.fromDate);
+  const place = useSelector((state) => state.place);
+
   return (
     <div className={styles.item} key={car._id}>
       <div className={styles.imageBlock}>
@@ -33,7 +37,7 @@ const ProductModule = ({ car, styles, fromDate, active, handleBooking, placeHold
         <div>
           <Button
             variant="contained"
-            disabled={fromDate && placeHolder !== 'Место получения' ? false : true}
+            disabled={fromDate && place !== 'Место получения' ? false : true}
             onClick={() => handleBooking(car)}
           >
             Забронировать
