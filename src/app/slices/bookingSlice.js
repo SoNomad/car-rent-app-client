@@ -43,6 +43,9 @@ export const deleteBooking = createAsyncThunk('books/delete', async (id, thunkAP
 
 const initialState = {
   bookings: [],
+  fromDate: '',
+  toDate: '',
+  place: 'Место получения',
   isLoading: true,
   error: null,
 };
@@ -50,7 +53,17 @@ const initialState = {
 const bookSlice = createSlice({
   name: 'bookings',
   initialState,
-  reducers: {},
+  reducers: {
+    setDate: (state, action) => {
+      console.log(action.payload);
+      state.fromDate = action.payload.fromDate;
+      state.toDate = action.payload.toDate;
+    },
+    setPlace: (state, action) => {
+      console.log(action.payload);
+      state.place = action.payload;
+    },
+  },
 
   extraReducers: (builder) => {
     builder
@@ -83,4 +96,5 @@ const bookSlice = createSlice({
   },
 });
 
+export const { setDate, setPlace } = bookSlice.actions;
 export const bookingReducer = bookSlice.reducer;

@@ -6,10 +6,15 @@ import styles from './BookingConfirm.module.scss';
 import { useForm } from 'react-hook-form';
 import { createBooking } from '../../app/slices/bookingSlice';
 
-const BookingConfirm = ({ setShow, car, location, fromDate, toDate, type }) => {
+const BookingConfirm = ({ setShow, car, type }) => {
   //расчет длительности аренды по дням
+  const place = useSelector((state) => state.place);
+  const fromDate = useSelector((state) => state.fromDate);
+  const toDate = useSelector((state) => state.toDate);
+
   const fromDateFormat = moment(fromDate, 'DD-MM-YYYY'); // перевод в формат для расчета длительности
   const toDateFormat = moment(toDate, 'DD-MM-YYYY'); // перевод в формат для расчета длительности
+
   const totalDays = moment.duration(toDateFormat.diff(fromDateFormat)).asDays() + 1; //функция расчета
   const totalPayment = totalDays * car.payPerDay; //сумма за все дни
 
@@ -29,7 +34,7 @@ const BookingConfirm = ({ setShow, car, location, fromDate, toDate, type }) => {
       ...value,
       type,
       _carId: car._id,
-      location,
+      location: place,
       fromDate,
       toDate,
       totalDays,
@@ -58,7 +63,7 @@ const BookingConfirm = ({ setShow, car, location, fromDate, toDate, type }) => {
         <div className={styles.forms}>
           <Typography> Дата начала: {fromDate}</Typography>
           <Typography> Дата конца: {toDate}</Typography>
-          <Typography> Доставка: {location}</Typography>
+          <Typography> Доставка: {place}</Typography>
           <Typography sx={{ fontWeight: 200, fontSize: 58 }}>
             {car.payPerDay} <span>RUB/day</span>{' '}
           </Typography>

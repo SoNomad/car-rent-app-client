@@ -2,17 +2,19 @@ import React, { useEffect, useState } from 'react';
 import styles from './Products.module.scss';
 import BookingConfirm from '../BookingConfirm/BookingConfirm';
 import axios from '../../app/axios';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { checkReserved } from '../../app/slices/bookingSlice';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import ProductModule from './ProductModule';
 import SkeletonProduct from './SkeletonProduct';
 
-const Products = ({ placeHolder, fromDate, toDate, active, page, setPage }) => {
+const Products = ({ active, page, setPage }) => {
   //стилизация кнопки MUI
 
   const dispatch = useDispatch();
+  const fromDate = useSelector((state) => state.fromDate);
+  const toDate = useSelector((state) => state.toDate);
   const [show, setShow] = useState(false); //стэйт для показа окна заказа
   const [data, setData] = useState(); // список машин с базы
   const [isLoading, setLoading] = useState(true); // для лоадера
@@ -57,26 +59,11 @@ const Products = ({ placeHolder, fromDate, toDate, active, page, setPage }) => {
     <div className={styles.container}>
       <div className={styles.wrapper}>
         {/* открытие кона заказа и передача в него информации о датах и адресе */}
-        {show && (
-          <BookingConfirm
-            type={active}
-            setShow={setShow}
-            car={carId}
-            fromDate={fromDate}
-            toDate={toDate}
-            location={placeHolder}
-          />
-        )}
+        {show && <BookingConfirm type={active} setShow={setShow} car={carId} />}
         {/* маппинг списка полученных авто */}
         <div className={styles.itemContainer}>
           {data.map((car) => (
-            <ProductModule
-              car={car}
-              styles={styles}
-              fromDate={fromDate}
-              handleBooking={handleBooking}
-              placeHolder={placeHolder}
-            />
+            <ProductModule car={car} styles={styles} handleBooking={handleBooking} />
           ))}
         </div>
       </div>

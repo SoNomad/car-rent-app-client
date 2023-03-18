@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
 import { DownOutlined } from '@ant-design/icons';
 import { Dropdown, Space } from 'antd';
+import { useDispatch, useSelector } from 'react-redux';
+import { setPlace } from '../../app/slices/bookingSlice';
 
-const GetLocation = ({ placeHolder, setPlaceHolder }) => {
+const GetLocation = () => {
+  const dispatch = useDispatch();
+
+  const place = useSelector((state) => state.place);
+
   const [getLocation, setGetLocation] = useState(
     'https://maps.google.com/maps?q=%D1%81%D0%B0%D0%BC%D1%83%D0%B8%20%D0%B0%D1%8D%D1%80%D0%BE%D0%BF%D0%BE%D1%80%D1%82&t=&z=13&ie=UTF8&iwloc=&output=embed'
   );
   const [open, setOpen] = useState(false);
 
   const handleMenuClick = (e) => {
-    setPlaceHolder(e.key);
+    dispatch(setPlace(e.key));
+
     setOpen(true);
     if (e.key === 'Аэропорт Самуи') {
       setGetLocation(
@@ -71,7 +78,7 @@ const GetLocation = ({ placeHolder, setPlaceHolder }) => {
         open={open}
       >
         <Space>
-          <span>{placeHolder}</span>
+          <span>{place}</span>
           <DownOutlined />
         </Space>
       </Dropdown>
