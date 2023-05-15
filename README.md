@@ -63,13 +63,13 @@ npm start
 
 <h3>
   <a href="https://github.com/AnZoro1">
-    <img alt="Kharsaeva" src="https://img.shields.io/badge/-AnZoro1-black?style=for-the-badge&logo=github&logoColor=white" />
+    <img alt="AnZoro1" src="https://img.shields.io/badge/-AnZoro1-black?style=for-the-badge&logo=github&logoColor=white" />
   </a>
 </h3>
 
 <h3>
   <a href="https://github.com/raininsnovv">
-    <img alt="Movsar" src="https://img.shields.io/badge/-raininsnovv-black?style=for-the-badge&logo=github&logoColor=white" />
+    <img alt="Ибрагим Бакаев" src="https://img.shields.io/badge/-raininsnovv-black?style=for-the-badge&logo=github&logoColor=white" />
   </a>
 </h3>
 
